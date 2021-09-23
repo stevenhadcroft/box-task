@@ -4,6 +4,7 @@ export default {
     ROWS:2,
     COLUMNS:4,
     BOX_SIZE:80,
+    BORDER_RADIUS:5,
     SPACING:100,
     NUMBER_ARRAY:[1, 2, 3, 4, 5, 6, 7, 8],
 }

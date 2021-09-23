@@ -2,8 +2,6 @@ import * as PIXI from 'pixi.js';
 import Constants, {FONT_STYLE} from "./Constants";
 import {getGlobal, getRandomColour} from "./utils";
 
-const BORDER_RADIUS = 5;
-
 class Box {
 
     constructor(x, y, number, onBoxClick) {
@@ -36,7 +34,7 @@ class Box {
         let graphics = new PIXI.Graphics();
         graphics.lineStyle(10, randomColor, 1);
         graphics.beginFill(randomColor, 0.5);
-        graphics.drawRoundedRect(-size/2, -size/2, size, size, BORDER_RADIUS);
+        graphics.drawRoundedRect(-size/2, -size/2, size, size, Constants.BORDER_RADIUS);
         graphics.endFill();
         container.addChild(graphics);
 
