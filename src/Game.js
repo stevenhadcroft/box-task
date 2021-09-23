@@ -14,10 +14,10 @@ class Game {
 
 	showInstructions(){
 		const str = `Click the boxes to find ${this.targetNumber}`; 
-        this.instructions = new PIXI.Text(str, FONT_STYLE);
-        this.instructions.position = {x:getStageMiddle().x, y:50};
+		this.instructions = new PIXI.Text(str, FONT_STYLE);
+		this.instructions.position = {x:getStageMiddle().x, y:50};
 		this.instructions.anchor.x = 0.5;
-        this.stage.addChild(this.instructions);
+		this.stage.addChild(this.instructions);
 	}
 
 	destroyInstructions(){
@@ -26,19 +26,19 @@ class Game {
 
 	showSuccess(){
 		const titleStr = "Congratulations you've found the number"; 
-        this.success = new PIXI.Text(titleStr, FONT_STYLE);
-        this.success.position = {x:getStageMiddle().x, y:50};
+		this.success = new PIXI.Text(titleStr, FONT_STYLE);
+		this.success.position = {x:getStageMiddle().x, y:50};
 		this.success.anchor.x = 0.5;
-        this.stage.addChild(this.success);
+		this.stage.addChild(this.success);
 
 		const restartStr = "Click here to restart"; 
-        this.restart = new PIXI.Text(restartStr, FONT_STYLE);
-        this.restart.position = {x:getStageMiddle().x, y:120};
+		this.restart = new PIXI.Text(restartStr, FONT_STYLE);
+		this.restart.position = {x:getStageMiddle().x, y:120};
 		this.restart.anchor.x = 0.5;
 		this.restart.interactive = true;
-        this.restart.buttonMode = true;
-        this.restart.addListener('mousedown', this.onRestartClick.bind(this));
-        this.stage.addChild(this.restart);
+		this.restart.buttonMode = true;
+		this.restart.addListener('mousedown', this.onRestartClick.bind(this));
+		this.stage.addChild(this.restart);
 	}
 
 	createBoxes(){
