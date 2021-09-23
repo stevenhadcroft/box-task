@@ -25,7 +25,7 @@ function newGame() {
 	stage.removeChildren()
 	game = null;
 	// start new game
-    game = new Game(newGame);
+	game = new Game(newGame);
 }
 
 function tick() {

@@ -43,7 +43,7 @@ class Box {
         this.text.anchor = {x:0.5, y:0.5};
         this.text.visible = false;
         container.addChild(this.text);
-	}
+    }
 }
 
 export default Box;
