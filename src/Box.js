@@ -1,12 +1,13 @@
-import * as PIXI from 'pixi.js'
-import Constants from "./Constants";
-import {getGlobal} from "./utils";
-import {getRandomColour} from "./utils";
+import * as PIXI from 'pixi.js';
+import Constants, {FONT_STYLE} from "./Constants";
+import {getGlobal, getRandomColour} from "./utils";
 
 const BORDER_RADIUS = 5;
 
 class Box {
+
     constructor(x, y, number, onBoxClick) {
+        this.stage = getGlobal('stage');
         this.pos = {x, y};
         this.number = number;
         this.onBoxClick = onBoxClick;
@@ -19,13 +20,12 @@ class Box {
     }
 
     create() {
-        let stage = getGlobal('stage');
         const size = Constants.BOX_SIZE;
 
         // container for box and number string
         let container = new PIXI.Container();
         container.position = this.pos;
-        stage.addChild(container);
+        this.stage.addChild(container);
 
         container.interactive = true;
         container.buttonMode = true;
@@ -41,15 +41,11 @@ class Box {
         container.addChild(graphics);
 
         // create number 
-        this.text = new PIXI.Text(this.number, {fontFamily:'Arial', fontSize:28, fill:0xffffff, align:'center'});
-        this.text.position = {x:-8, y:-15};
+        this.text = new PIXI.Text(this.number, FONT_STYLE);
+        this.text.anchor = {x:0.5, y:0.5};
         this.text.visible = false;
         container.addChild(this.text);
-
 	}
-    
-
-
 }
 
 export default Box;

@@ -7,3 +7,5 @@ export default {
     SPACING:100,
     NUMBER_ARRAY:[1, 2, 3, 4, 5, 6, 7, 8],
 }
+
+export const FONT_STYLE = {fontFamily:'Arial', fontSize:28, fill:"0xffffff", align:'center'}
