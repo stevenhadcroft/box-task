@@ -1,14 +1,13 @@
 import * as PIXI from 'pixi.js';
-import Box from "./Box";
 import Constants, {FONT_STYLE} from "./Constants";
 import {getGlobal, getStageMiddle, shuffle, roundRandomNumber} from "./utils";
+import Box from "./Box";
 
 class Game {
 	constructor(restartCallback) {
 		this.stage = getGlobal('stage');
 		this.targetNumber = roundRandomNumber(8);
 		this.onRestart = restartCallback;
-
 		this.showInstructions();
 		this.createBoxes();
 	}
